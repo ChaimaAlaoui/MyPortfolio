@@ -1,0 +1,23 @@
+# macOS system files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Node modules (if you ever install npm packages)
+node_modules/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Environment or config files
+.env
+
+# Build or cache folders (if you ever add a build step)
+dist/
+build/
+.cache/
+
+# OS or editor-specific files
+Thumbs.db
