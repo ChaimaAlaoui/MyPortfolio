@@ -170,7 +170,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-menu li:last-child {
-  margin-left: 2rem;
+  margin-left: 1rem;
+
 }
 
 .navbar {
@@ -193,12 +194,20 @@ h1, h2, h3, h4, h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
+
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   align-items: center;
+  gap: 0.2rem; 
+  margin: 0;
+  padding: 0;
+  transform: translateX(-25px); 
+  font-size: 0.8rem; 
+  
 }
 
 .nav-link {
@@ -250,7 +259,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .theme-switch {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .toggle-icons {
@@ -1202,5 +1211,22 @@ body.dark-mode .project-card {
   
   .education-content h4 {
     font-size: 1rem;
+  }
+}
+/* Pour les écrans larges - ajustement de l'espacement */
+@media (min-width: 769px) {
+  .nav-menu li {
+    margin: 0 0.8rem; /* Réduit l'espacement entre les liens */
+  }
+  
+  .nav-menu {
+    gap: 0.5rem; /* Espacement réduit */
+  }
+}
+
+/* Pour les très grands écrans */
+@media (min-width: 1200px) {
+  .nav-menu li {
+    margin: 0 1rem; /* Espacement légèrement augmenté */
   }
 }
