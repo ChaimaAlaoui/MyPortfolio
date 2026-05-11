@@ -57,12 +57,25 @@
             <li><a class="nav-link" href="#awards">Awards & Distinctions</a></li>
             <li><a class="nav-link" href="#contact">Contact</a></li>
 
-           <li>
-  <a href="https://drive.google.com/uc?export=download&id=1xvlXUWqZfUpa7_o3CMPytyujBAwdr3Ga" 
+           <!-- <li>
+  <a href="https://drive.google.com/file/d/1HWGghHpXlkWYo2Pwjg4RqDCiirQ8BdzS/view?usp=sharing" 
      download="Chaima_Najib_Alaoui_CV.pdf" 
      class="nav-link btn btn-primary">
      RESUME <i class="fas fa-download"></i>
   </a>
+</li> -->
+<li class="nav-item resume-dropdown">
+  <a href="#" class="nav-link btn btn-primary">
+    RESUME <i class="fas fa-download"></i>
+  </a>
+  <div class="dropdown-lang">
+    <a href="#" onclick="downloadCV('fr')">
+      <i class="fas fa-file-pdf"></i> French
+    </a>
+    <a href="#" onclick="downloadCV('en')">
+      <i class="fas fa-file-pdf"></i> English
+    </a>
+  </div>
 </li>
 
             <!-- Toggle switch -->
@@ -105,9 +118,23 @@
         <!-- Updated button container -->
         <div class="button-container">
           <a href="#contact" class="btn btn-secondary">Connect With Me</a>
-          <a href="https://drive.google.com/uc?export=download&id=1xvlXUWqZfUpa7_o3CMPytyujBAwdr3Ga" download="Chaima_Najib_Alaoui_CV.pdf" class="btn btn-primary">
+          <!-- <a href="https://drive.google.com/file/d/1HWGghHpXlkWYo2Pwjg4RqDCiirQ8BdzS/view?usp=sharing" download="Chaima_Najib_Alaoui_CV.pdf" class="btn btn-primary">
             <i class="fas fa-download"></i> Download CV
+          </a> -->
+
+        <div class="download-dropdown">
+        <a href="#" class="btn btn-primary">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <div class="dropdown-lang">
+          <a href="#" onclick="downloadCV('fr')">
+            <i class="fas fa-file-pdf"></i> French
           </a>
+          <a href="#" onclick="downloadCV('en')">
+            <i class="fas fa-file-pdf"></i> English
+          </a>
+        </div>
+      </div>
         </div>
 
            
@@ -345,7 +372,7 @@
     </section>
 
 
-    <!-- Experience Section -->
+    <!-- Experience Section
     <section id="experience">
       <div class="container">
         <div class="section-header">
@@ -385,6 +412,69 @@
               <p><strong>Technologies:</strong> Power BI, Python, Jupyter, DAX, Power Query</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="division"></div>
+          <h2>Work Experience</h2>
+          <p>My professional journey and accomplishments</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+            <span class="timeline-date">March - October 2026</span>
+            <div class="timeline-content">
+              <h3>MGT Conseils</h3>
+              <h4>Data Engineer</h4>
+              <p>Paris, France</p>
+              <ul>
+                <li>Designed and modeled a Data Warehouse using Data Vault 2.0 methodology: defined Hubs, Links, and Satellites to ensure auditability, scalability, and complete data historization</li>
+                <li>Developed robust ETL/ELT pipelines with Talend Open Studio for ingesting, transforming, and loading multi-source data into PostgreSQL</li>
+                <li>Implemented a data quality process (profiling, cleaning, validation) to ensure reliability and consistency of production data flows</li>
+                <li>Created interactive Power BI dashboards connected to the Data Warehouse for business KPI monitoring and decision-making</li>
+                <li>Automated the recruitment process using no-code/low-code AI workflows with n8n: CV parsing, automatic candidate scoring, and real-time recruiter notifications</li>
+              </ul>
+               <p><strong>Technologies:</strong> Talend Open Studio, PostgreSQL, Data Vault 2.0, Power BI, DAX, n8n, Python, Git</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">May-September 2025</span>
+            <div class="timeline-content">
+              <h3>LISIC, ULCO</h3>
+              <h4>AI Developer</h4>
+              <p>Calais, France</p>
+              <ul>
+                <li>Optimized an NLP model (BERT) via fine-tuning and prompt engineering for query understanding</li>
+                <li>Developed an intelligent chatbot guiding users in expressing their needs</li>
+                <li>Implemented a recommendation engine and structured a CPS database for targeted suggestions</li>
+              </ul>
+              <p><strong>Technologies:</strong> Python, BERT, NLP, MongoDB, FastAPI, Next.js, Tailwind CSS, SHAP</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">Jun - August 2024</span>
+            <div class="timeline-content">
+              <h3>Marjane Group</h3>
+              <h4>Junior Data Analyst</h4>
+              <p>Casablanca, Morocco</p>
+              <ul>
+                <li>Collected and cleaned HR data (salaries, charges, benefits)</li>
+                <li>Analyzed personnel costs with Power BI</li>
+                <li>Created interactive dashboards for monitoring and anomaly detection</li>
+                <li>Collaborated with HR and presented analyses to stakeholders</li>
+              </ul>
+              <p><strong>Technologies:</strong> Power BI, Python, Jupyter, DAX, Power Query</p>
+            </div>
+          </div>
+
+        
         </div>
       </div>
     </section>
@@ -813,6 +903,29 @@
       //   alert('Thank you for your message! I will get back to you soon.');
       //   this.reset();
       // });
+      // Download CV function
+      function downloadCV(langue) {
+        let lien = '';
+        let nom = '';
+        
+        if (langue === 'fr') {
+          // Remplacez par votre lien Google Drive pour CV Français
+          lien = 'https://drive.google.com/file/d/1HWGghHpXlkWYo2Pwjg4RqDCiirQ8BdzS/view?usp=sharing';
+          nom = 'Chaima_CV_Francais.pdf';
+        } else {
+          // Remplacez par votre lien Google Drive pour CV Anglais
+          lien = 'https://drive.google.com/file/d/1sQqhD73vH3WxWUYR43YiNlMNmsuvkkCD/view?usp=sharing';
+          nom = 'Chaima_CV_English.pdf';
+        }
+        
+        // Créer un lien temporaire pour le téléchargement
+        const link = document.createElement('a');
+        link.href = lien;
+        link.download = nom;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
     </script>
   </body>
 </html>
